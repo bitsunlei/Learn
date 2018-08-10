@@ -18,9 +18,40 @@ else:
     code_start=   2000; code_range = 800
     code_list = ['%06d'%i for i in range(code_start,code_start+code_range)]
 
-for ti in range(90):
+# isworking = check_wktime(dt.datetime.now().strftime('%H:%M'))
+def check_wktime(time0_str):    # return a boolean value
+    working = False
+    t_Day = dt.datetime.now().strftime('%Y-%m-%d ')
+    t_time0=dt.datetime.strptime(t_Day+time0_str,"%Y-%m-%d %H:%M")
+    t_time1=dt.datetime.strptime(t_Day+'09:30',"%Y-%m-%d %H:%M")
+    t_time2=dt.datetime.strptime(t_Day+'11:30',"%Y-%m-%d %H:%M")
+    t_time3=dt.datetime.strptime(t_Day+'13:00',"%Y-%m-%d %H:%M")
+    t_time4=dt.datetime.strptime(t_Day+'15:00',"%Y-%m-%d %H:%M")
+
+    if t_time0<t_time1 or t_time0>t_time4:
+        print('out of working time')
+    elif t_time0>t_time2 and t_time0<t_time3:
+        print('noon resting time')
+    else:
+        working = True
+        print('working time')
+    return working
+
+# initial checking of working time
+np.int(dt.datetime.now().strftime('%M'))
+now_hour = dt.datetime.now().strftime('%H')
+now_min  = dt.datetime.now().strftime('%M')
+t_wait = 9*60+30 - (np.int(now_hour)*60+np.int(now_min))
+if t_wait>0:
+    print('Waiting for the openning time (09:30)')
+    sleep(t_wait*60)
+print('Program is starting')
+
+# 6 hours of scanning
+for ti in range(60*6):  # 6 hours
     # break total codes into chunks for smooth downloading
-    if True:
+    isworking = check_wktime(dt.datetime.now().strftime('%H:%M'))
+    if isworking:
         if len(code_list)<500:
             rdf0 = ts.get_realtime_quotes(code_list[:500])  # Realtime DF
         else:
@@ -38,9 +69,10 @@ for ti in range(90):
         print('%d'%len(code_list)+' codes downloaded')
         rdf0.to_csv('d:/Python/data/realtime_quotes.csv')
     else:
+        print('Out of working time, reads saved file for testing')
         rdf0 = pd.read_csv('d:/Python/data/realtime_quotes.csv',converters={'code':str})
 
-    # remove non-used data
+    # data pre-processing: remove non-used data
     rdf1 = rdf0.replace(to_replace='',value='0').copy()
     rdf  = rdf1[rdf1.open.astype('float')!=0.0].copy();    # remove unused stock codes
     rdf.set_index('code',inplace=True)
@@ -74,16 +106,19 @@ for ti in range(90):
 
     # save data to file
     slct_file   = pth.Path('d:/python/data/'+dt.datetime.now().strftime('%Y%m%d_pi.csv'))
-    if slct_file.exists():
-        with open(slct_file,'a',encoding='utf_8_sig') as f:
-            slct_df.to_csv(f,header=False,encoding='utf_8_sig')
-        print('selected codes appended to file')
-        print(slct_df)
+    if isworking:
+        if slct_file.exists():
+            with open(slct_file,'a',encoding='utf_8_sig') as f:
+                slct_df.to_csv(f,header=False,encoding='utf_8_sig')
+            print(dt.datetime.now().strftime('%H:%M'),': selected codes appended to file')
+            print(slct_df[['code','change','PI']])
+        else:
+            slct_df.to_csv(slct_file,encoding='utf_8_sig')  #converters={'code':str})
+            print(dt.datetime.now().strftime('%H:%M'),': a new-day file created')
     else:
-        slct_df.to_csv(slct_file,encoding='utf_8_sig')  #converters={'code':str})
-        print('File created')
+        print('Out of working time, sleeping 60 seconds')
 
-    print(ti,'th/60 processing ended, sleeping 60 seconds')
+    # sleep 60 seconds
     time.sleep(60)    # sleep one minute
 
 print('The End')
