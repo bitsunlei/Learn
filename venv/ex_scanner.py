@@ -42,8 +42,8 @@ np.int(dt.datetime.now().strftime('%M'))
 now_hour = dt.datetime.now().strftime('%H')
 now_min  = dt.datetime.now().strftime('%M')
 t_wait = 9*60+30 - (np.int(now_hour)*60+np.int(now_min))
-if t_wait>0:
-    print('Waiting for the openning time (09:30)')
+if t_wait>0:    # before 09:30
+    print(t_wait,'-minutes waiting time for openning (09:30)')
     sleep(t_wait*60)
 print('Program is starting')
 
@@ -99,7 +99,7 @@ for ti in range(60*6):  # 6 hours
     slct_codes= list(slct_sort.index)                 # extract the code index
     slct_lmt  = round(len(code_list)*0.005)           # extract a small part of the total codes
     slct_tdf = pd.DataFrame(data=slct_sort[:slct_lmt],columns=['PI'])
-    slct_df  = pd.merge(rdf[['name','pre_close','price']],slct_tdf,how='inner',right_index=True,left_index=True)
+    slct_df  = pd.merge(slct_tdf,rdf[['name','pre_close','price']],how='inner',right_index=True,left_index=True)
     slct_df['change'] = (slct_df['price'].astype(float)/(slct_df['pre_close'].astype(float)+1e-6)-1)*100
     slct_df['change'] = slct_df['change'].apply(lambda x: '%.2f'%x)
     slct_df['time'] = dt.datetime.now().strftime('%H:%M')
@@ -111,12 +111,13 @@ for ti in range(60*6):  # 6 hours
             with open(slct_file,'a',encoding='utf_8_sig') as f:
                 slct_df.to_csv(f,header=False,encoding='utf_8_sig')
             print(dt.datetime.now().strftime('%H:%M'),': selected codes appended to file')
-            print(slct_df[['code','change','PI']])
+            print(slct_df[['name','change','PI']])
         else:
             slct_df.to_csv(slct_file,encoding='utf_8_sig')  #converters={'code':str})
             print(dt.datetime.now().strftime('%H:%M'),': a new-day file created')
+        print('Open time, sleeping 60 seconds')
     else:
-        print('Out of working time, sleeping 60 seconds')
+        print('Close time, sleeping 60 seconds')
 
     # sleep 60 seconds
     time.sleep(60)    # sleep one minute
