@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="362e8890-51db-4265-baca-60f68ccab177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/venv/ex_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/ex_scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/ex_scanner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/ex_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/ex_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/ex_wzry.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/ex_wzry.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,35 +16,35 @@
     <session id="71555089">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.5" value="5" />
           <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="26" />
+          <entry key="py" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="26" />
+          <entry key="Python" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="20587" />
-          <entry key="py" value="44415" />
+          <entry key="Python Console" value="21514" />
+          <entry key="py" value="48584" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="65002" />
+          <entry key="Python" value="70098" />
         </counts>
       </usages-collector>
     </session>
@@ -54,15 +54,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/ex_wzry.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/ex_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+            <state relative-caret-position="270">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding>
-                <element signature="e#680#1278#0" />
-                <element signature="e#1623#1982#0" />
-                <marker date="1534050896607" expanded="true" signature="680:1390" ph="..." />
+                <marker date="1534125473321" expanded="true" signature="719:1429" ph="..." />
               </folding>
             </state>
           </provider>
@@ -100,14 +107,16 @@
         <option value="$PROJECT_DIR$/venv/ex_stockToday.py" />
         <option value="$PROJECT_DIR$/venv/ex_stockTimer.py" />
         <option value="$PROJECT_DIR$/venv/ex_scanner.py" />
+        <option value="$PROJECT_DIR$/venv/ex_wzry.py" />
         <option value="$PROJECT_DIR$/venv/ex_analysis.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="2153" />
-    <option name="width" value="814" />
-    <option name="height" value="1167" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="2183" />
+    <option name="height" value="1403" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -116,7 +125,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
@@ -181,27 +193,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ex_stockReal" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Learn" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/ex_stockReal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ex_stockTimer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Learn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -244,20 +235,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ex_wzry" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Learn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/ex_wzry.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.ex_stockReal" />
       <item itemvalue="Python.ex_scanner" />
       <item itemvalue="Python.ex_stockToday" />
       <item itemvalue="Python.ex_stockTimer" />
       <item itemvalue="Python.ex_analysis" />
+      <item itemvalue="Python.ex_wzry" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.ex_analysis" />
+        <item itemvalue="Python.ex_wzry" />
         <item itemvalue="Python.ex_scanner" />
         <item itemvalue="Python.ex_stockTimer" />
         <item itemvalue="Python.ex_stockToday" />
-        <item itemvalue="Python.ex_stockReal" />
       </list>
     </recent_temporary>
   </component>
@@ -284,10 +296,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2152" y="-8" width="1616" height="1176" extended-state="7" />
+    <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983871" weight="0.28479382" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983871" weight="0.28453737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5016129" side_tool="true" weight="0.507732" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32928476" />
@@ -296,11 +308,11 @@
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5003524" side_tool="true" weight="0.49315068" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49964765" visible="true" weight="0.32949087" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49964765" visible="true" weight="0.3341646" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32756963" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49964765" weight="0.34870318" />
+      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49964765" weight="0.45725265" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -374,18 +386,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/ex_analysis.py</url>
-          <line>68</line>
+          <line>73</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/ex_analysis.py</url>
+          <url>file://$PROJECT_DIR$/venv/ex_wzry.py</url>
           <line>44</line>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/ex_analysis.py</url>
+          <url>file://$PROJECT_DIR$/venv/ex_wzry.py</url>
           <line>40</line>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/ex_wzry.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -506,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/ex_stockReal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="480">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#29#48#0" expanded="true" />
           </folding>
@@ -517,21 +534,23 @@
     <entry file="file://$PROJECT_DIR$/venv/ex_scanner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
-          <folding>
-            <element signature="e#65#84#0" expanded="true" />
-          </folding>
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/ex_wzry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/ex_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+        <state relative-caret-position="270">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
-            <element signature="e#680#1278#0" />
-            <element signature="e#1623#1982#0" />
-            <marker date="1534050896607" expanded="true" signature="680:1390" ph="..." />
+            <marker date="1534125473321" expanded="true" signature="719:1429" ph="..." />
           </folding>
         </state>
       </provider>

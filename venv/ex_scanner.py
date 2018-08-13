@@ -44,7 +44,8 @@ now_min  = dt.datetime.now().strftime('%M')
 t_wait = 9*60+30 - (np.int(now_hour)*60+np.int(now_min))
 if t_wait>0:    # before 09:30
     print(t_wait,'-minutes waiting time for openning (09:30)')
-    sleep(t_wait*60)
+    time.sleep(t_wait*60)
+    
 print('Program is starting')
 
 # 6 hours of scanning

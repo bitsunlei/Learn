@@ -11,9 +11,10 @@ import time
 from matplotlib.font_manager import FontProperties
 
 # load data for analysis
-rd_file = pth.Path('d:/python/data/'+dt.datetime.now().strftime('%Y%m%d_test.csv'))
+rd_file = pth.Path('d:/python/data/'+dt.datetime.now().strftime('%Y%m%d_pi.csv'))
 if rd_file.exists()==False:
     rd_file = pth.Path('d:/python/data/20180810_test.csv')
+    print('No today file, testing mode')
 rd_df   = pd.read_csv(rd_file,converters={'code':str})
 rd_df['code'] = rd_df['code'].apply(lambda x: '%06d'%(int(x)))  # formatting the code column
 
@@ -36,21 +37,25 @@ gp_mdf  = grpdata_process(gp,rd_df)
 gp_mdf.to_csv(str(rd_file).replace('test','ana'),encoding='utf_8_sig')
 
 # check the history data of these code
-code_check = gp_mdf.index[4]
-cd_df = ts.get_k_data(code_check,start='2018-07-30',end='2018-08-10')
-title = cd_df['code'].iloc[0] # +cd_df.loc[0,'name']
-cd_df.set_index('date',inplace=True)
-cd_df.drop(['volume','code'],axis=1,inplace=True)
+font_set = FontProperties(fname=r"c:\windows\fonts\simsun.ttc",size=16)
+for imi in range(len(gp_mdf)):
+    code_check = gp_mdf.index[imi]
+    cd_df = ts.get_k_data(code_check,start='2018-07-30',end='2018-08-10')
+    title = code_check +' '+gp_mdf['name'].iloc[imi] # +cd_df.loc[0,'name']
+    cd_df.set_index('date',inplace=True)
+    cd_df.drop(['volume','code'],axis=1,inplace=True)
 
-# plt.figure()
-fig,ax=plt.subplots(figsize=(9,4))
-cd_df.plot.area(ax=ax,stacked=False)
-plt.gca().set_ylim(cd_df.min().min(),cd_df.max().max())
-plt.gca().set_xticks(list(range(len(cd_df))))
-plt.gca().set_xticklabels(cd_df.index,rotation='vertical')
-plt.gca().set_title(title)
-plt.show()
-fig.savefig('d:/python/data/jpeg/'+title+'_10days.jpg')
+    # plt.figure()
+    fig,ax=plt.subplots(figsize=(9,4))
+    cd_df.plot.area(ax=ax,stacked=False)
+    plt.gca().set_ylim(cd_df.min().min(),cd_df.max().max())
+    plt.gca().set_xticks(list(range(len(cd_df))))
+    plt.gca().set_xticklabels(cd_df.index,rotation='vertical')
+    plt.title(title,fontproperties=font_set)
+    # plt.show()
+    fig.savefig('d:/python/data/jpeg/'+code_check+'_10days.jpg')
+    print(title,' figure saved')
+    plt.close(fig)
 
 
 
